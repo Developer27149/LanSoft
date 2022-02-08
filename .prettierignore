@@ -1,0 +1,6 @@
+*.js
+node_module
+public
+.next
+.husky
+.vscode
