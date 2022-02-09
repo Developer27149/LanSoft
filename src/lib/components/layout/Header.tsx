@@ -1,7 +1,9 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 
+import SearchBox from "./SearchBox";
 import ThemeToggle from "./ThemeToggle";
+import UserStatus from "./UserStatus";
 
 const Header = () => {
   return (
@@ -10,9 +12,11 @@ const Header = () => {
         <Link href="/">岚软</Link>
       </Heading>
 
-      <Box>
+      <Flex gap={2}>
+        <SearchBox />
+        <UserStatus />
         <ThemeToggle />
-      </Box>
+      </Flex>
     </Flex>
   );
 };

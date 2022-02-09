@@ -7,14 +7,13 @@ import {
   StatHelpText,
   StatGroup,
   Button,
-  Box,
 } from "@chakra-ui/react";
-import { AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
     <Flex as="footer" width="full" align="center" justify="end">
-      <Box marginRight="auto">
+      <Flex marginRight="auto" flexDir="column">
         <Button
           marginTop={2}
           as="a"
@@ -23,9 +22,19 @@ const Footer = () => {
           size="sm"
           leftIcon={<AiOutlineGithub />}
         >
-          赏个 Star
+          赏个 ⭐️
         </Button>
-      </Box>
+        <Button
+          marginTop={2}
+          as="a"
+          href="mainto:rivenqinyy@gmail.com"
+          target="_blank"
+          size="sm"
+          leftIcon={<AiOutlineMail />}
+        >
+          提个建议
+        </Button>
+      </Flex>
       <StatGroup gap={16}>
         <Stat>
           <StatLabel>今日访客</StatLabel>

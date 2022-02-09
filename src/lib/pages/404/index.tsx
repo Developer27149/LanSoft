@@ -39,15 +39,14 @@ const Page404 = () => {
       </Text>
 
       <Box marginY={4}>
-        <Heading textAlign="center">Page not Found.</Heading>
+        <Heading textAlign="center">页面不存在</Heading>
 
-        <Box textAlign="center" marginTop={4}>
-          <Text>It&apos;s Okay!</Text>
+        <Box textAlign="center" marginTop={9}>
           <Link href="/" passHref>
             <Button
               backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
             >
-              Let&apos;s Head Back
+              回到首页
             </Button>
           </Link>
         </Box>

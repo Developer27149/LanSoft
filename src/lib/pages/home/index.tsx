@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 
-// import CTASection from "lib/components/samples/CTASection";
-import SomeImage from "lib/components/samples/SomeImage";
+import SoftwareTags from "../../components/public/SoftwareTags";
 import SomeText from "lib/components/samples/SomeText";
 
+import HomepageImage from "./HomepageImage";
 import Navbar from "./Navbar";
 
 const Home = () => {
@@ -16,11 +16,11 @@ const Home = () => {
       mb={8}
       w="full"
     >
-      <SomeImage />
-
+      <HomepageImage />
       <Box>
         <SomeText />
         <Navbar />
+        <SoftwareTags />
       </Box>
     </Box>
   );
