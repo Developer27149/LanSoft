@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <Box marginTop={4} paddingY={3}>
       <Box borderLeft="3px solid #eee" paddingLeft={2}>
-        标签
+        分类
       </Box>
       <Flex as="nav">
         <Box paddingX={3} paddingY={2}>

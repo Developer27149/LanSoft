@@ -7,39 +7,39 @@ export default function SoftwareTags() {
   return <Box paddingY={3}>    
     <Box borderLeft="3px solid #eee" paddingLeft={2}>标签</Box>
     <Flex paddingTop={2} flexWrap="wrap">
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={AiOutlineTags}/>
         <TagLabel>文件</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={MdContentCut}/>
         <TagLabel>截图</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={GrSystem}/>
         <TagLabel>系统</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={AiOutlineTags}/>
         <TagLabel>文件</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={MdContentCut}/>
         <TagLabel>截图</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={GrSystem}/>
         <TagLabel>系统</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={AiOutlineTags}/>
         <TagLabel>文件</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={MdContentCut}/>
         <TagLabel>截图</TagLabel>
       </Tag>
-      <Tag colorScheme="green" margin="6px 8px">
+      <Tag colorScheme="green" margin="6px 8px" cursor="pointer">
         <TagLeftIcon as={GrSystem}/>
         <TagLabel>系统</TagLabel>
       </Tag>

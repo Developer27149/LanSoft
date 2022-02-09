@@ -38,15 +38,15 @@ const Footer = () => {
       <StatGroup gap={16}>
         <Stat>
           <StatLabel>今日访客</StatLabel>
-          <StatNumber>345,670</StatNumber>
+          <StatNumber>1,670</StatNumber>
           <StatHelpText>
             <StatArrow type="increase" />
             23.36%
           </StatHelpText>
         </Stat>
         <Stat>
-          <StatLabel>今日下载量</StatLabel>
-          <StatNumber>45</StatNumber>
+          <StatLabel>日下载量</StatLabel>
+          <StatNumber>345</StatNumber>
           <StatHelpText>
             <StatArrow type="decrease" />
             9.05%
