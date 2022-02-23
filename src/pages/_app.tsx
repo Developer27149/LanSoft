@@ -1,14 +1,23 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ChakraProvider } from "@chakra-ui/react";
-import { RecoilRoot } from "recoil";
+import { memoize } from "lodash";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { RecoilRoot } from "recoil";
 
 import defaultSEOConfig from "../../next-seo.config";
 import Layout from "lib/components/layout";
 import customTheme from "lib/styles/customTheme";
 import "lib/styles/globals.css";
+
+// ignore in-browser next/js recoil warnings until its fixed.
+const mutedConsole = memoize((console: any) => ({
+  ...console,
+  warn: (...args: any) =>
+    args[0].includes("Duplicate atom key") ? null : console.warn(...args),
+}));
+global.console = mutedConsole(global.console);
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

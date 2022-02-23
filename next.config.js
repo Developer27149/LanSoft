@@ -1,6 +1,19 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const withPWA = require("next-pwa");
 
+// @ts-ignore
+const intercept = require("intercept-stdout")
+
+// safely ignore recoil stdout warning messages 
+function interceptStdout(text) {
+  if (text.includes('Duplicate atom key')) {
+    return ''
+  }
+  return text
+}
+// Intercept in dev and prod
+intercept(interceptStdout)
+
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
   pwa: {
@@ -19,3 +32,4 @@ module.exports = withPWA({
   },
   
 });
+
