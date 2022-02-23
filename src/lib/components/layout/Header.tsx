@@ -11,7 +11,6 @@ const Header = () => {
       <Heading as="h1" size="lg" fontWeight="700">
         <Link href="/">岚软</Link>
       </Heading>
-
       <Flex gap={2}>
         <SearchBox />
         <UserStatus />

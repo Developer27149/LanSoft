@@ -1,17 +1,15 @@
-import {
-  Button,
-  Flex,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
-import { FcSearch } from "react-icons/fc";
+import { Flex, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { useRef, useEffect } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
 import { useRecoilState } from "recoil";
 
 import { searchState } from "./searchStatus";
 
 export default function SearchBox() {
   const [searchData, setSearchData] = useRecoilState(searchState);
+  const handleSearchAction = () => {
+    console.log("search target:", searchData);
+  };
   const handleChangeSearchKeyword = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -20,27 +18,40 @@ export default function SearchBox() {
       text: e.target.value,
     }));
   };
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    // 为全局注册一个快捷键搜索
+    function handleFocusSearch(e: React.KeyboardEvent<HTMLElement>) {
+      if (e.ctrlKey && e.key === "k") {
+        inputRef.current?.focus();
+      }
+    }
+    document.addEventListener("keypress", handleFocusSearch as any);
+    return () => {
+      document.removeEventListener("keypress", handleFocusSearch as any);
+    };
+  }, []);
+
   return (
     <Flex mr={4}>
       <InputGroup>
         <Input
           pr="2rem"
-          placeholder="软件卸载工具"
+          placeholder="ctrl+k 快速搜索"
           type="text"
           focusBorderColor="teal.200"
           value={searchData.text}
           onChange={handleChangeSearchKeyword}
+          ref={inputRef}
+          onPointerEnter={handleSearchAction}
         />
-        <InputRightElement bg="teal.100" borderRightRadius="4px">
-          <Button
-            size="sm"
-            h="1.75em"
-            bg="teal.100"
-            color="blue.800"
-            _hover={{ backgroundColor: "transparent" }}
-          >
-            <FcSearch />
-          </Button>
+        <InputRightElement
+          bg="teal.100"
+          borderRightRadius="4px"
+          onClick={handleSearchAction}
+          cursor="pointer"
+        >
+          <AiOutlineSearch />
         </InputRightElement>
       </InputGroup>
     </Flex>
