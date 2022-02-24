@@ -5,10 +5,15 @@ import { useRecoilState } from "recoil";
 
 import { searchState } from "./searchStatus";
 
+// eslint-disable-next-line import/extensions
+import { postData } from "@/services/index";
+
 export default function SearchBox() {
   const [searchData, setSearchData] = useRecoilState(searchState);
-  const handleSearchAction = () => {
+  const handleSearchAction = async () => {
     console.log("search target:", searchData);
+    const res = await postData("software/search", { query: searchData.text });
+    console.log(res);
   };
   const handleChangeSearchKeyword = (
     e: React.ChangeEvent<HTMLInputElement>
